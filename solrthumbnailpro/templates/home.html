@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load thumbnail %}
+
+{% block contenido %}
+
+    <div class="column">
+
+        <h3>Sin solr-thumbnail 100x100</h3>
+
+        {% for foto in fotos %}
+            <figure>
+                <img src="{{ foto.imagen.url }}" width="100" height="100" alt="" />
+                <figcaption>
+                    {{ foto.titulo }}
+                </figcaption>
+            </figure>
+        {% endfor %}
+
+    </div>
+
+    <div class="column">
+
+        <h3>Con solr-thumbnail</h3>
+
+        {% for foto in fotos %}
+            <figure>
+                {% thumbnail foto.imagen "100x100" crop="left" as img %}
+                    <img src="{{ img.url }}" width="{{ img.width }}" height="{{ im.height }}">
+                {% endthumbnail %}
+                <figcaption>
+                    {{ foto.titulo }}
+                </figcaption>
+            </figure>
+        {% endfor %}
+
+    </div>
+{% endblock %}

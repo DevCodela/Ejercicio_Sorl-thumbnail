@@ -1,0 +1,25 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Solr-Thumbails</title>
+    <style>
+        body { text-align: center; }
+        figure { display: table; margin: 20px auto; }
+        figcaption { display: table-caption; caption-side: bottom; text-align: center; }
+        .column {
+            border: 1px solid #ddd; 
+            display: inline-block;
+            text-align: center;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    {% block contenido %}
+    {% endblock %}
+
+</body>
+</html>
